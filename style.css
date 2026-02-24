@@ -3,6 +3,10 @@ body {
 	margin-block: 1.34rem;
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+	margin-block: 0.67em;
+}
+
 hgroup :is(h1, h2, h3, h4, h5, h6) {
 	margin-block-end: 0;
 }
@@ -13,9 +17,18 @@ hgroup p {
 
 p {
 	text-align: justify;
+	margin-block: 0.5em;
 }
 
 p[lang=en] { hyphens: auto; }
+
+fieldset {
+	margin-inline: 0;
+	border: 1px solid currentColor;
+}
+
+fieldset legend + p { margin-block-start: 0; }
+fieldset p:last-child { margin-block-end: 0; }
 
 img {
 	max-inline-size: 100%;
@@ -44,10 +57,14 @@ figure.float-left { float: inline-start; }
 	margin-block-start: 1em;
 }
 
-.columns > :is(p, figure):first-child, .columns > :is(h1, h2, h3, h4, h5, h6) ~ :is(p, figure) {
+.columns > :is(p, figure):first-child, .columns > :is(h1, h2, h3, h4, h5, h6) + :is(p, figure) {
 	margin-block-start: 0;
 }
 
 .columns > :is(h1, h2, h3, h4, h5, h6):first-child {
 	column-span: all;
+}
+
+.columns > :is(h1, h2, h3, h4, h5, h6) {
+	break-after: avoid-column;
 }
