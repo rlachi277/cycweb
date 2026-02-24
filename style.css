@@ -1,7 +1,6 @@
-@import "font/pretendardvariable-gov.css";
-
 :root {
 	--font: "Pretendard GOV Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	color-scheme: light dark;
 }
 
 body {
@@ -29,6 +28,21 @@ p {
 
 p[lang=en] { hyphens: auto; }
 
+hr { color: inherit; border: none; border-block-start: 1px solid currentColor; }
+
+ul { padding-inline-start: 2ch; }
+ol { padding-inline-start: 3ch; }
+:is(dir, menu, ol, ul) ol {
+	padding-inline-start: 2ch;
+	list-style-type: lower-alpha;
+}
+:is(dir, menu, ol, ul) :is(dir, menu, ol, ul) ol {
+	list-style-type: lower-roman;
+}
+
+li > p { margin-block: 0; } /* use p to justify text inside li */
+li > img { vertical-align: text-top; }
+
 fieldset {
 	margin-inline: 0;
 	border: 1px solid currentColor;
@@ -41,6 +55,8 @@ img {
 	max-inline-size: 100%;
 	max-block-size: 20em;
 }
+img.small { max-block-size: 10em; }
+img.large { max-block-size: 30em; }
 
 figure {
 	text-align: center;
@@ -58,6 +74,10 @@ figure.float-left { float: inline-start; }
 
 .columns {
 	columns: 20em;
+}
+
+fieldset > .columns {
+	column-rule: thin solid;
 }
 
 .columns:has( > :is(p, figure):first-child) {
