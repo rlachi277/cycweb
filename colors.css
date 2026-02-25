@@ -2,6 +2,8 @@
 	color-scheme: light dark;
 	
 	/* shamelessly robbed from Wikipedia */
+	--c-bg: light-dark(#f8f9fa, #202122);
+	--c-text: light-dark(#202122, #eaecf0);
 	--c-link: light-dark(#36c,#88a3e8);
 	--c-linkh: light-dark(#3056a9,#a6bbf5);
 	--c-linka: light-dark(#233566,#b6d4fb);
