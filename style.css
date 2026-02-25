@@ -131,7 +131,7 @@ a.color:active { color: var(--ca); }
 .color.c10 { --c: var(--c-10); --ch: var(--c-10h); --ca: var(--c-10a); }
 
 .colorbox {
-	--bg: transparent; --bgh: transparent; --bga: transparent;
+	--bg: transparent; --bgh: var(--c-0-5); --bga: var(--c-0-4);
 	--bd: currentColor; --bdh: currentColor; --bda: currentColor;
 	--c: currentColor; --ch: currentColor; --ca: currentColor;
 	font-family: var(--font);
