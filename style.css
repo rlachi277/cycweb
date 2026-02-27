@@ -11,6 +11,14 @@ body {
 	margin-block: 3rem;
 }
 
+article.float-right, article.float-left {
+	margin-block-start: 0;
+	margin-inline: 0.4lh;
+	max-width: min(480px, 100%);
+}
+article.float-right { float: inline-end; }
+article.float-left { float: inline-start; }
+
 h1 { font-size: 3em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
@@ -66,10 +74,12 @@ fieldset {
 	padding-block: 0.35em 0.625em;
 	border: 1px solid currentColor;
 }
+article:is(.float-right, .float-left) > fieldset { margin-block: 0; }
 fieldset:not(:has( > legend)) { padding-block-start: 0.625em; }
 
 fieldset > legend + :is(h1, h2, h3, h4, h5, h6, p, .columns), fieldset > :is(h1, h2, h3, h4, h5, h6, p, .columns):first-child { margin-block-start: 0; }
-fieldset > p:last-child { margin-block-end: 0; }
+fieldset > :last-child, fieldset > :last-child > :last-child,
+fieldset > :last-child > :last-child > :last-child { margin-block-end: 0; }
 fieldset .columns { column-rule: thin solid; }
 fieldset hr { margin-block: calc(0.5lh - 0.5px); border-block-start: 1px solid currentColor; }
 
@@ -111,7 +121,8 @@ figure > :is(img, video) {
 figcaption { margin-block-start: 0.2lh; }
 
 figure.float-right, figure.float-left {
-	margin-block-start: 0;
+	margin-block: 0;
+	margin-inline: 0.4lh;
 	padding: 0.4lh;
 	border: 1px solid currentColor;
 }
@@ -129,8 +140,8 @@ a.broken:active { color: var(--c-linkea); }
 	--c: currentColor; --ch: currentColor; --ca: currentColor;
 	color: var(--c);
 }
-a.color:hover, a.color:focus-visible { color: var(--ch); }
-a.color:active { color: var(--ca); }
+:is(a, .click).color:hover, :is(a, .click).color:focus-visible { color: var(--ch); }
+:is(a, .click).color:active { color: var(--ca); }
 .color.c0 { --c: var(--c-0); --ch: var(--c-0h); --ca: var(--c-0a); }
 .color.c1 { --c: var(--c-1); --ch: var(--c-1h); --ca: var(--c-1a); }
 .color.c2 { --c: var(--c-2); --ch: var(--c-2h); --ca: var(--c-2a); }
