@@ -10,6 +10,9 @@
 	--c-linke: light-dark(#bf3c2c,#fd7865);
 	--c-linkeh: light-dark(#9f3526,#fea898);
 	--c-linkea: light-dark(#612419,#ffc8bd);
+	--c-links: light-dark(#6a60b0,#a799cd);
+	--c-linksh: light-dark(#534fa3,#c5b9dd);
+	--c-linksa: light-dark(#353262,#d9d0e9);
 
 	--c-0-l5: oklch(95% 0 0);
 	--c-0-l4: oklch(91% 0 0);

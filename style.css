@@ -136,6 +136,9 @@ a:active { color: var(--c-linka); text-decoration: underline; }
 a.broken { color: var(--c-linke); }
 a.broken:hover, a.broken:focus-visible { color: var(--c-linkeh); }
 a.broken:active { color: var(--c-linkea); }
+a.self { color: var(--c-links); }
+a.self:hover, a.self:focus-visible { color: var(--c-linksh); }
+a.self:active { color: var(--c-linksa); }
 
 .color {
 	--c: currentColor; --ch: currentColor; --ca: currentColor;
@@ -234,4 +237,27 @@ ins {
 
 del {
 	color: var(--c-0--2);
+}
+
+nav {
+	margin-inline: 0;
+	margin-block-end: 0.4lh;
+	margin-inline: 0.4lh;
+	padding: 0.625em;
+	border: 1px solid currentColor;
+	float: inline-end;
+}
+
+nav summary { display: none; padding: 0.4lh; }
+
+nav menu {
+	margin: 0;
+	padding-inline-start: calc(2ch + 0.4lh);
+	padding-inline-end: 0.4lh;
+}
+
+@media screen and (max-width: 480px) {
+	nav { float: none; }
+	nav summary { display: revert; }
+	nav menu > li:first-child { margin-block-start: 0; }
 }
