@@ -357,7 +357,7 @@ function deserialize(el, data, edit) {
 			id: edit_id++,
 			children: []
 		};
-		if (editable) new_el.setAttribute("contenteditable", "plaintext-only");
+		if (editable) new_el.contentEditable = "plaintext-only";
 	}
 	data.children.forEach((e) => {
 		let d = deserialize(new_el, e, edit);
